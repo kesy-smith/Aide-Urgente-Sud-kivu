@@ -1,0 +1,6 @@
+{
+  "name": "Aide Urgente Sud-Kivu",
+  "description": "Une plateforme d'entraide communautaire pour connecter les personnes dans le besoin avec des volontaires au Sud-Kivu.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

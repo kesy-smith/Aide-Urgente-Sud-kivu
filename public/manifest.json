@@ -1,0 +1,17 @@
+{
+  "name": "Soutien Sud-Kivu",
+  "short_name": "SoutienSK",
+  "description": "Application d'aide mutuelle pour le Sud-Kivu, RDC.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#FF3B30",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1067/1067568.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

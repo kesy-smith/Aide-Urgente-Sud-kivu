@@ -1,0 +1,57 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["user", "volunteer", "ngo"] },
+        "rating": { "type": "number" },
+        "totalHelped": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "displayName", "role"]
+    },
+    "HelpRequest": {
+      "title": "Help Request",
+      "description": "Urgent help request post",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string", "enum": ["medical", "food", "financial", "emergency"] },
+        "location": {
+          "type": "object",
+          "properties": {
+            "area": { "type": "string" },
+            "lat": { "type": "number" },
+            "lng": { "type": "number" }
+          }
+        },
+        "contact": { "type": "string" },
+        "status": { "type": "string", "enum": ["open", "in_progress", "resolved"] },
+        "urgency": { "type": "string", "enum": ["low", "medium", "high"] },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "volunteerId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "category", "location", "contact", "status", "userId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Store user profiles"
+    },
+    "requests/{requestId}": {
+      "schema": "HelpRequest",
+      "description": "Store help requests"
+    }
+  }
+}

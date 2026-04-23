@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 100% 59.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 0 0% 83.9%;
+    --radius: 1rem;
+    
+    /* Custom brand colors from design */
+    --urgent: #FF3B30;
+    --help: #34C759;
+    --progress: #FF9F0A;
+    --info: #0A84FF;
+    --dark-surface: #121212;
+    --card-surface: #1E1E1E;
+    --nav-surface: #1A1A1A;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: #050505;
+    color: #f3f4f6;
+    @apply font-sans transition-colors duration-300;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
