@@ -90,7 +90,7 @@ const PWAInstallButton = () => {
 import { AuthProvider, useAuth } from './AuthContext';
 import { HelpRequest, RequestCategory, RequestStatus } from './types';
 import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp, doc, updateDoc, deleteDoc, where } from 'firebase/firestore';
-import { db } from './lib/firebase';
+import { db, getFirebaseState } from './lib/firebase';
 import { cn } from './lib/utils';
 import { handleFirestoreError } from './lib/error_handler';
 import './i18n';
@@ -102,7 +102,6 @@ const FirebaseDiagnostic = () => {
 
   useEffect(() => {
     const check = async () => {
-      const { getFirebaseState } = await import('./lib/firebase');
       const state = await getFirebaseState();
       setStatus(state);
       // Only show alert for ACTUAL configuration errors
